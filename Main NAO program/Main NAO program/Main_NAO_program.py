@@ -1,10 +1,23 @@
-import time, json, urllib, StudentClass, naoqi
+import time, urllib, StudentClass, naoqi
 from StudentClass import Student
 from naoqi import ALProxy
 from naoqi import ALBroker
 from naoqi import ALModule
 from datetime import datetime
 import pypyodbc
+
+connection = pypyodbc.connect('Driver={SQL Server};'
+                                'Server=OMAR\SQlEXPRESS;'
+                                'Database=NAO_Robot;'
+                                'uid=;pwd=')
+
+cursor = connection.cursor()
+query = "Select * from opleiding where opleidingid = 1"
+cursor.execute(query)
+results = cursor.fetchone()
+print(str(results[0]))
+results = cursor.fetchone()
+connection.close()
 
 ip = ""
 port = 9559
@@ -18,13 +31,6 @@ ALTextTospeechProxy = ALProxy("ALTextTospeechProxy", ip, port)
 
 runProgram = True
 studentList = [Student]
-
-def pullStudentInfoFromJsonServer(id, params):
-    jsonUrl = "http://145.93.78.4:4000/users"
-    jsonUrl += "/" + string(id)
-    for item in params:
-       jsonUrl += ("/" + item)
-    return json.loads(jsonUrl)
 
 #def getStudentMood(student):
 
