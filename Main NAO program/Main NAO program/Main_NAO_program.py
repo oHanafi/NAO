@@ -33,7 +33,7 @@ def pullStudentInfoFromJsonServer(id, params):
 
 #def getNoiseVolume():
 
-<<<<<<< HEAD
+
 def greetStudent():
     currentTime = int(datetime.now().strftime('%H'))
     greeting = ""
@@ -50,7 +50,7 @@ def tellGrades(student Student):
 def makePeopleQuiet():
     # Sounddetection: http://doc.aldebaran.com/1-14/naoqi/audio/alsounddetection-api.html
     say("Sshhhhh")
-=======
+
 #def getDarknessLevel():
 #    lightLevel = ALDarknessThresholdProxy.getDarknessThreshold()
 #    print(lightLevel)
@@ -64,7 +64,7 @@ def makePeopleQuiet():
 
 def makePeopleQuiet():
    say("Sshhhhh")
->>>>>>> origin/master
+
 
 def say(text):
     ALTextTospeechProxy.say(text)
@@ -74,7 +74,6 @@ def startUp():
     ALTextTospeechProxy.setLanguage("English")
 
 def shutDown():
-
 
 def main():
     while(runRrogram):
