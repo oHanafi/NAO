@@ -1,4 +1,3 @@
-
 use master;
 
 if db_id('NAO_Robot') is not null
@@ -11,8 +10,9 @@ go
 use NAO_Robot
 go
 
+
 create table Opleiding(
-OpleidingID	int,
+OpleidingID	Int,
 Naam	Varchar(20),
 
 Constraint PK_Opleiding
@@ -22,7 +22,8 @@ Constraint PK_Opleiding
 create table Studenten(
 StudentID	Int,
 OpleidingID	Int,
-Naam		Varchar(50) not null,
+Voornaam		Varchar(50) not null,
+Achternaam		Varchar(50) not null,
 Geboortedatum	Date not null,
 Studentnummer	Int not null,
 
@@ -34,6 +35,24 @@ Constraint FK_Student_Opleiding
 	references Opleiding(OpleidingID)
 
 );
+GO
+
+
+SET IDENTITY_INSERT dbo.Opleiding ON;
+
+
+INSERT INTO Opleiding (OpleidingID, Naam) VALUES (1, 'Business');
+INSERT INTO Opleiding (OpleidingID, Naam) VALUES (2, 'Technology');
+INSERT INTO Opleiding (OpleidingID, Naam) VALUES (3, 'Software engineering');
+INSERT INTO Opleiding (OpleidingID, Naam) VALUES (4, 'Media');
+
+INSERT INTO Studenten (StudentID, OpleidingID, Voornaam, Achternaam, Geboortedatum, Studentnummer) VALUES (1, 'Omar', 'Hanafi', '1994-10-23', 2333678);
+INSERT INTO Studenten (StudentID, OpleidingID, Voornaam, Achternaam, Geboortedatum, Studentnummer) VALUES (2, 'Niek', 'Nieuwenhuisen', '1997-04-15', 2587645);
+
+
+
+
+
 
 
 
