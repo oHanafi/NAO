@@ -28,11 +28,9 @@ def pullStudentInfoFromJsonServer(id, params):
 
 #def getStudentMood(student):
 
-
 #def getAmountOfPeopleInRoom():
 
 #def getNoiseVolume():
-
 
 def greetStudent():
     currentTime = int(datetime.now().strftime('%H'))
@@ -45,22 +43,11 @@ def greetStudent():
         greeting = "Good afternoon, "     
     say(greeting) #Voeg nog naam van geïdentificeerde student toe.
 
-def tellGrades(student Student):
 
 def makePeopleQuiet():
     # Sounddetection: http://doc.aldebaran.com/1-14/naoqi/audio/alsounddetection-api.html
     say("Sshhhhh")
 
-#def getDarknessLevel():
-#    lightLevel = ALDarknessThresholdProxy.getDarknessThreshold()
-#    print(lightLevel)
-#    if(sum(Student.preferredLightLevel for Student in studentList)/studentList.count(Student) < lightLevel):
-#        say("Its dark, could someone lighten the area up?")
-#    return
-#
-#def greetStudent():
-
-#def tellGradess(student Student):
 
 def makePeopleQuiet():
    say("Sshhhhh")
@@ -74,7 +61,7 @@ def startUp():
     ALTextTospeechProxy.setLanguage("English")
 
 def shutDown():
+    ALPostureProxy.goToPosture("sit")
 
 def main():
     while(runRrogram):
-        delay
