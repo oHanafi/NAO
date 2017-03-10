@@ -4,7 +4,7 @@ from naoqi import ALProxy
 from naoqi import ALBroker
 from naoqi import ALModule
 from datetime import datetime
-
+import pypyodbc
 
 ip = ""
 port = 9559
